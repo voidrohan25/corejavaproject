@@ -28,6 +28,11 @@ class Booking {
         this.endLocation = end;
     }
 
+    
+    public Vehicle getVehicle() {
+        return v;
+    }
+
     public void assignDriver(Driver d) {
         this.d = d;
         this.accepted = true;
@@ -81,10 +86,12 @@ class Booking {
     public void cancel() {
         active = false;
 
-        if (d != null) d.setAvailable(true);
-        v.setAvailable(true);
+        if (d != null) {
+            d.setAvailable(true);
+            v.setAvailable(true);
 
-        System.out.println("Ride Cancelled ");
+            System.out.println("Ride Cancelled ");
+        }
     }
 
     public void showDetails() {
