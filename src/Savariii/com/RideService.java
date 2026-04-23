@@ -31,7 +31,7 @@ class RideService {
                 pendingRequests.add(b);
                 p.addBooking(b);
 
-                System.out.println("Ride request sent... ⏳");
+                System.out.println("Ride request sent !");
 
                 return b;
             }
