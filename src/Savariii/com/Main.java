@@ -16,12 +16,11 @@ public class Main {
         service.addVehicle(new Vehicle("V1", "Bike", 10));
         service.addVehicle(new Vehicle("V2", "Car", 20));
 
-        service.addDriver(new Driver("Rohit", "123", "Bike"));
-        service.addDriver(new Driver("Amit", "456", "Car"));
+        
 
         while (true) {
 
-            System.out.println("\n===== OLA APP =====");
+            System.out.println("\n---------- OLA APP --------------");
             System.out.println("1. Passenger");
             System.out.println("2. Driver");
             System.out.println("3. Admin");
