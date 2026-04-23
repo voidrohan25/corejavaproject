@@ -18,7 +18,6 @@ class RideService {
         vehicles.add(v);
     }
 
-    // Passenger creates request
     public Booking requestRide(Passenger p, String type,
                                double dist, String start, String end) {
 
@@ -31,7 +30,7 @@ class RideService {
                 pendingRequests.add(b);
                 p.addBooking(b);
 
-                System.out.println("Ride request sent !");
+                System.out.println("Ride request sent... ");
 
                 return b;
             }
@@ -49,13 +48,17 @@ class RideService {
         Booking b = pendingRequests.poll();
 
         for (Driver d : drivers) {
-            if (d.isAvailable()) {
+
+            
+            if (d.isAvailable() &&
+                d.getVehicleType().equalsIgnoreCase(b.getVehicle().getType())) {
+
                 b.assignDriver(d);
                 return;
             }
         }
 
-        System.out.println("No drivers available");
+        System.out.println("No matching driver available");
     }
 
     public Booking getActiveRide() {
